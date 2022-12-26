@@ -63,7 +63,7 @@ module rs(
     reg [`INSIDE_OPCODE_WIDTH] ops [(`RS_SIZE-1):0];
     reg [`ROB_TAG_WIDTH] reorder [(`RS_SIZE-1):0];
 
-    reg debug;
+    /*reg debug;
     wire debug_;
     //assign debug_=rs1_reorder[1];
     wire [`DATA_WIDTH] debug_wire_pc1;
@@ -128,7 +128,7 @@ module rs(
     assign debug_rs1_value_5 = rs1_value[5];
 
     wire [`DATA_WIDTH] debug_reorder_5;
-    assign debug_reorder_5 = reorder[5];
+    assign debug_reorder_5 = reorder[5];*/
     
     assign out_fetcher_idle = (free_line != `ZERO_RS_TAG);
     
