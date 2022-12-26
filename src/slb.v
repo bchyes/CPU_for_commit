@@ -63,7 +63,7 @@ module slb(
 
     assign out_fetcher_idle = (nextPtr != head);
 
-    reg debug_ready;
+    /*reg debug_ready;
     reg debug_address;
     reg [`ROB_TAG_WIDTH] debug_reorder2;
 
@@ -110,7 +110,7 @@ module slb(
     wire [`INSIDE_OPCODE_WIDTH] debug_ops_9;
     assign debug_ops_9 = ops[9];
     reg debug_in;
-    reg [`DATA_WIDTH] debug_value;
+    reg [`DATA_WIDTH] debug_value;*/
 
     wire ready_issue_1;
     assign ready_issue_1 = ready_to_issue[1];
@@ -158,8 +158,8 @@ module slb(
             busy[j] <= `FALSE;
             address_ready[j] <= `FALSE;
         end
-        debug_in <= `FALSE;
-        debug_value <= `ZERO_DATA;
+        /*debug_in <= `FALSE;
+        debug_value <= `ZERO_DATA;*/
     end else if (rdy == `TRUE && in_slb_misbranch == `FALSE) begin
         //if (debug_in == `TRUE) begin
         //    $display("This is a test number: %b.", value1[6]);
@@ -169,9 +169,9 @@ module slb(
         //out_io_load <= `FALSE;
         out_rob_mem_destination <= `ZERO_DATA;
         out_rob_reorder <= `ZERO_ROB_TAG;
-        debug_ready <= ready_to_issue[3];
+        /*debug_ready <= ready_to_issue[3];
         debug_address <= address_ready[3];
-        debug_reorder2 <= reorder2[3];
+        debug_reorder2 <= reorder2[3];*/
         //debug_in = `FALSE;
         //debug_value <= `ZERO_DATA;
         if (ready_to_issue[nowPtr] == `TRUE) begin

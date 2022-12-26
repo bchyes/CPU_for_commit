@@ -71,7 +71,7 @@ module rob(
     reg [`DATA_WIDTH] newpc [(`ROB_SIZE - 1):0];
     reg prediction [(`ROB_SIZE - 1):0];
 
-    reg debug;
+    /*reg debug;
     reg debug_value;
     reg debug_prediction;
     reg debug_ready;
@@ -119,7 +119,7 @@ module rob(
     wire [`DATA_WIDTH] debug_pc_3;
     assign debug_pc_3 = pcs[3];
     wire [`DATA_WIDTH] debug_pc_d;
-    assign debug_pc_d = pcs[13];
+    assign debug_pc_d = pcs[13];*/
 
     integer i;
   always @(posedge clk) begin
@@ -134,16 +134,16 @@ module rob(
         for (i = 0;i < `ROB_SIZE;i = i + 1) begin
             ready[i] <= `FALSE;
         end
-        debug <= `FALSE;
+        /*debug <= `FALSE;
         debug_value <= `FALSE;
         debug_prediction <= `FALSE;
-        debug_ready <= `FALSE;
+        debug_ready <= `FALSE;*/
         //out_decode_reorder <= `ZERO_ROB_TAG;
     end else if (rdy == `TRUE && out_misbranch == `FALSE) begin
-        debug <= `FALSE;
+        /*debug <= `FALSE;
         debug_value <= `TRUE;
         debug_prediction <= `TRUE;
-        debug_ready <= ready[4];
+        debug_ready <= ready[4];*/
         //debug_op1 <= ops[1];
         //debug_op2 <= ops[2];
         //debug_op3 <= ops[3];
@@ -203,8 +203,8 @@ module rob(
                         out_bp_tag <= pcs[head_next_ptr][`BP_HASH_TAG];
                         ready[head_next_ptr] <= `FALSE;
                         head <= head_next_ptr;
-                        debug_value <= value[head_next_ptr];
-                        debug_prediction <= prediction[head_next_ptr];
+                        /*debug_value <= value[head_next_ptr];
+                        debug_prediction <= prediction[head_next_ptr];*/
                         out_rs_update_reorder <= head_next_ptr;
                         out_rs_update_value <= value[head_next_ptr];//!!!!!
                         out_slb_update_reorder <= head_next_ptr;
@@ -257,7 +257,7 @@ module rob(
             end else if (status == WAIT_MEM) begin
                 out_mem_save_data <= `FALSE; //outside to avoid second save
                 if (in_mem_save_data == `TRUE) begin
-                    debug <= `TRUE;
+                    //debug <= `TRUE;
                     status <= IDLE;
                     ready[head_next_ptr] <= `FALSE;
                     head <= head_next_ptr;

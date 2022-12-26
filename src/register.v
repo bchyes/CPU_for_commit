@@ -22,7 +22,7 @@ module register(
     reg [`DATA_WIDTH] value [(`REG_SIZE-1):0];
     reg [`ROB_TAG_WIDTH] reorder [(`REG_SIZE-1):0];
     
-    wire [`ROB_TAG_WIDTH] debug_reorder_s0;
+    /*wire [`ROB_TAG_WIDTH] debug_reorder_s0;
     assign debug_reorder_s0 = reorder[8];
     wire [`DATA_WIDTH] debug_value_s0;
     assign debug_value_s0 = value[8];
@@ -105,7 +105,7 @@ module register(
     wire [`ROB_TAG_WIDTH] debug_reorder_a7;
     assign debug_reorder_a7 = reorder[17];
     wire [`DATA_WIDTH] debug_value_a7;
-    assign debug_value_a7 = value[17];
+    assign debug_value_a7 = value[17];*/
 
     assign out_reg_rs1_reorder = reorder[in_decode_rs1];
     assign out_reg_rs2_reorder = reorder[in_decode_rs2];
