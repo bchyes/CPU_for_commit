@@ -1,4 +1,4 @@
-`include "/mnt/c/Users/25693/Desktop/math/Computer_system/CPU/riscv/src/constant.v"
+`include "constant.v"
 module alu(
     input clk,
     input rst,
