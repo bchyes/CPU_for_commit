@@ -1,3 +1,4 @@
+`include "constant.v"
 module bp(
     input clk,
     input rst,

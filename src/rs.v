@@ -1,3 +1,4 @@
+`include "constant.v"
 module rs(
     input clk,
     input rst,

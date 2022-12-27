@@ -1,3 +1,4 @@
+`include "constant.v"
 module slb(
     input clk,
     input rst,

@@ -1,3 +1,4 @@
+`include "constant.v"
 module memCtrl(
     input clk,
     input rst,

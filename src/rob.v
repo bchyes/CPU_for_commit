@@ -1,3 +1,4 @@
+`include "constant.v"
 module rob(
     input clk,
     input rst,

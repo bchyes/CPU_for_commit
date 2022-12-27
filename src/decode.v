@@ -1,3 +1,4 @@
+`include "constant.v"
 module decode(
     input clk,
     input rst,

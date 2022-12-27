@@ -1,3 +1,4 @@
+`include "constant.v"
 module fetcher(
     input clk,
     input rst,

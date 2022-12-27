@@ -1,3 +1,4 @@
+`include "constant.v"
 module register(
     input clk,
     input rst,
