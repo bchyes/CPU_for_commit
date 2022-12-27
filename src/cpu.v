@@ -3,7 +3,6 @@
 `include "alu.v"
 `include "memCtrl.v"
 `include "bp.v"
-`include "constant.v"
 `include "decode.v"
 `include "fetch.v"
 `include "register.v"
